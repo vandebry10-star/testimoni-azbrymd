@@ -274,6 +274,20 @@ body {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
 
+/* Loading Indicator */
+.loading {
+    text-align: center;
+    padding: 30px;
+    color: var(--gray);
+    font-size: 1.1rem;
+    display: none;
+}
+
+.loading i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
 .testimoni-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -368,6 +382,14 @@ body {
 
 .rating-value {
     color: var(--warning);
+}
+
+/* No Testimoni */
+.no-testimoni {
+    text-align: center;
+    padding: 40px;
+    color: var(--gray);
+    grid-column: 1 / -1;
 }
 
 /* Statistics */
@@ -486,6 +508,32 @@ body {
     color: var(--gray);
 }
 
+.footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Export Button */
+.export-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--success), #27ae60);
+    border: none;
+    border-radius: 8px;
+    color: var(--light);
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.export-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+}
+
 .social-links {
     display: flex;
     gap: 15px;
@@ -500,6 +548,27 @@ body {
 .social-links a:hover {
     color: var(--primary);
     transform: translateY(-2px);
+}
+
+/* Message Styles */
+.message {
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.success-message {
+    background: rgba(46, 204, 113, 0.1);
+    border: 1px solid var(--success);
+    color: var(--success);
+}
+
+.error-message {
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid var(--danger);
+    color: var(--danger);
 }
 
 /* Responsive */
@@ -536,7 +605,34 @@ body {
         text-align: center;
     }
 
+    .footer-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
     .stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-options {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+    }
+    
+    .testimoni-card {
+        padding: 20px;
+    }
+    
+    .footer {
+        padding: 25px;
+    }
+    
+    .footer-content {
         grid-template-columns: 1fr;
     }
 }
