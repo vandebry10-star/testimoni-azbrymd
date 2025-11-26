@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni - Azbry MD Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <h1>Azbry MD Bot</h1>
+            </div>
+            <p class="tagline">by FebryWesker</p>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Testimoni Pengguna</h2>
+                <p>Pengalaman nyata dari pengguna script Azbry MD Bot</p>
+            </div>
+        </section>
+
+        <!-- Testimoni Form -->
+        <section class="testimoni-form">
+            <div class="form-container">
+                <h3><i class="fas fa-edit"></i> Berikan Testimoni Anda</h3>
+                <form id="testimoniForm">
+                    <div class="form-group">
+                        <label for="nama"><i class="fas fa-user"></i> Nama / Samaran</label>
+                        <input type="text" id="nama" name="nama" required placeholder="Masukkan nama atau samaran">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pesan"><i class="fas fa-comment"></i> Pesan Testimoni</label>
+                        <textarea id="pesan" name="pesan" rows="5" required placeholder="Bagikan pengalaman Anda menggunakan Azbry MD Bot..."></textarea>
+                    </div>
+
+                    <!-- Rating Sections -->
+                    <div class="rating-section">
+                        <h4>Rating Layanan</h4>
+                        
+                        <div class="rating-group">
+                            <label>Fast Response</label>
+                            <div class="stars" data-category="fastResponse">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                        </div>
+
+                        <div class="rating-group">
+                            <label>Kualitas Script</label>
+                            <div class="stars" data-category="kualitas">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                        </div>
+
+                        <div class="rating-group">
+                            <label>Kemudahan Penggunaan</label>
+                            <div class="stars" data-category="kemudahan">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                        </div>
+
+                        <div class="rating-group">
+                            <label>Dukungan Update</label>
+                            <div class="stars" data-category="update">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                        </div>
+
+                        <div class="rating-group">
+                            <label>Value for Money</label>
+                            <div class="stars" data-category="value">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Kirim Testimoni
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Testimoni List -->
+        <section class="testimoni-list">
+            <h3><i class="fas fa-comments"></i> Testimoni Pengguna</h3>
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="5">⭐ 5 Bintang</button>
+                <button class="filter-btn" data-filter="4">⭐ 4 Bintang</button>
+                <button class="filter-btn" data-filter="3">⭐ 3 Bintang</button>
+            </div>
+            <div class="testimoni-container" id="testimoniContainer">
+                <!-- Testimoni akan dimuat di sini -->
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="statistics">
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalTestimoni">0</h3>
+                        <p>Total Testimoni</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="avgRating">0.0</h3>
+                        <p>Rating Rata-rata</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="recommendRate">0%</h3>
+                        <p>Rekomendasi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Azbry MD Bot</h4>
+                    <p>Script WhatsApp Bot terbaik dengan fitur lengkap dan update berkala.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <div class="contact-info">
+                        <p><i class="fab fa-whatsapp"></i> +62 815-xxxx-0802 (NOMOR RESMI)</p>
+                        <p><i class="fab fa-telegram"></i> @FebryWesker</p>
+                        <p><i class="fas fa-envelope"></i> febrywesker@azbry.com</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Fitur Unggulan</h4>
+                    <ul>
+                        <li>Multi Device Support</li>
+                        <li>500+ Commands</li>
+                        <li>Regular Updates</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Azbry MD Bot by FebryWesker. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
