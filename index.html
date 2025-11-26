@@ -6,6 +6,7 @@
     <title>Testimoni - Azbry MD Bot</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div class="container">
@@ -111,12 +112,18 @@
         <!-- Testimoni List -->
         <section class="testimoni-list">
             <h3><i class="fas fa-comments"></i> Testimoni Pengguna</h3>
+            
             <div class="filter-options">
                 <button class="filter-btn active" data-filter="all">Semua</button>
                 <button class="filter-btn" data-filter="5">⭐ 5 Bintang</button>
                 <button class="filter-btn" data-filter="4">⭐ 4 Bintang</button>
                 <button class="filter-btn" data-filter="3">⭐ 3 Bintang</button>
             </div>
+
+            <div class="loading" id="loading">
+                <i class="fas fa-spinner fa-spin"></i> Memuat testimoni...
+            </div>
+
             <div class="testimoni-container" id="testimoniContainer">
                 <!-- Testimoni akan dimuat di sini -->
             </div>
@@ -165,7 +172,7 @@
                 <div class="footer-section">
                     <h4>Kontak</h4>
                     <div class="contact-info">
-                        <p><i class="fab fa-whatsapp"></i> +62 815-xxxx-0802 (NOMOR RESMI)</p>
+                        <p><i class="fab fa-whatsapp"></i> +62 815-xxxx-0802(Owner Ori)</p>
                         <p><i class="fab fa-telegram"></i> @FebryWesker</p>
                         <p><i class="fas fa-envelope"></i> febrywesker@azbry.com</p>
                     </div>
@@ -181,11 +188,16 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Azbry MD Bot by FebryWesker. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                <p>&copy; since 2024 Azbry MD Bot by FebryWesker. All rights reserved.</p>
+                <div class="footer-actions">
+                    <button onclick="exportTestimonials()" class="export-btn">
+                        <i class="fas fa-download"></i> Export Testimoni
+                    </button>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
         </footer>
